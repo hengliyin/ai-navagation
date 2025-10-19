@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI产品推荐榜 - AI导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .category {
+            margin-bottom: 50px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+        }
+
+        .category-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            margin-right: 15px;
+        }
+
+        .category-subtitle {
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+            background: white;
+        }
+
+        .item-icon {
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+            font-size: 24px;
+        }
+
+        .item-name {
+            font-weight: 500;
+            font-size: 1em;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .items-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI产品推荐榜</h1>
+            <p class="subtitle">截止2025年10月10日 | 精选优质AI工具</p>
+        </header>
+
+        <!-- LLM大语言模型 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">LLM</div>
+                <div class="category-subtitle">大语言模型</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://claude.ai" class="item" target="_blank">
+                    <span class="item-icon">🌟</span>
+                    <span class="item-name">Claude Sonnet 4.5</span>
+                </a>
+                <a href="https://claude.ai" class="item" target="_blank">
+                    <span class="item-icon">🔶</span>
+                    <span class="item-name">Claude Opus 4.1</span>
+                </a>
+                <a href="https://chatgpt.com" class="item" target="_blank">
+                    <span class="item-icon">⚫</span>
+                    <span class="item-name">GPT 5 Thinking Pro</span>
+                </a>
+                <a href="https://chatgpt.com" class="item" target="_blank">
+                    <span class="item-icon">⚫</span>
+                    <span class="item-name">GPT 5 Thinking</span>
+                </a>
+                <a href="https://chatgpt.com" class="item" target="_blank">
+                    <span class="item-icon">⚫</span>
+                    <span class="item-name">GPT 5</span>
+                </a>
+                <a href="https://gemini.google.com" class="item" target="_blank">
+                    <span class="item-icon">💎</span>
+                    <span class="item-name">Gemini 2.5 Pro</span>
+                </a>
+                <a href="https://x.ai" class="item" target="_blank">
+                    <span class="item-icon">⭕</span>
+                    <span class="item-name">Grok 4</span>
+                </a>
+                <a href="https://glm.ai" class="item" target="_blank">
+                    <span class="item-icon">🔲</span>
+                    <span class="item-name">GLM-4.6</span>
+                </a>
+                <a href="https://kimi.ai" class="item" target="_blank">
+                    <span class="item-icon">⚫</span>
+                    <span class="item-name">Kimi K2</span>
+                </a>
+                <a href="https://qwenlm.github.io" class="item" target="_blank">
+                    <span class="item-icon">🟣</span>
+                    <span class="item-name">Qwen 3</span>
+                </a>
+                <a href="https://www.deepseek.com" class="item" target="_blank">
+                    <span class="item-icon">🔵</span>
+                    <span class="item-name">DeepSeek R1</span>
+                </a>
+                <a href="https://openai.com" class="item" target="_blank">
+                    <span class="item-icon">⚫</span>
+                    <span class="item-name">GPT O5S</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- ChatBot对话类产品 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">ChatBot</div>
+                <div class="category-subtitle">对话类产品</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://chatgpt.com" class="item" target="_blank">
+                    <span class="item-icon">💬</span>
+                    <span class="item-name">ChatGPT</span>
+                </a>
+                <a href="https://doubao.com" class="item" target="_blank">
+                    <span class="item-icon">🎭</span>
+                    <span class="item-name">豆包</span>
+                </a>
+                <a href="https://aistudio.google.com" class="item" target="_blank">
+                    <span class="item-icon">🎨</span>
+                    <span class="item-name">Google AI Studio</span>
+                </a>
+                <a href="https://claude.ai" class="item" target="_blank">
+                    <span class="item-icon">🌟</span>
+                    <span class="item-name">Claude</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- AI绘画 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">AI绘画</div>
+                <div class="category-subtitle">生成和编辑图片</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://nanobanana.com" class="item" target="_blank">
+                    <span class="item-icon">🍌</span>
+                    <span class="item-name">nano banana</span>
+                </a>
+                <a href="https://jimeng.jianying.com" class="item" target="_blank">
+                    <span class="item-icon">✨</span>
+                    <span class="item-name">即梦4.0</span>
+                </a>
+                <a href="https://www.midjourney.com" class="item" target="_blank">
+                    <span class="item-icon">⛵</span>
+                    <span class="item-name">Midjourney</span>
+                </a>
+                <a href="https://fluxkontext.com" class="item" target="_blank">
+                    <span class="item-icon">🔺</span>
+                    <span class="item-name">Flux Kontext</span>
+                </a>
+                <a href="https://chatgpt.com" class="item" target="_blank">
+                    <span class="item-icon">⚫</span>
+                    <span class="item-name">GPT 5</span>
+                </a>
+                <a href="https://imagen.google.com" class="item" target="_blank">
+                    <span class="item-icon">💎</span>
+                    <span class="item-name">Imagen 4</span>
+                </a>
+                <a href="https://recraft.ai" class="item" target="_blank">
+                    <span class="item-icon">🎨</span>
+                    <span class="item-name">Recraft</span>
+                </a>
+                <a href="https://qwenimage.com" class="item" target="_blank">
+                    <span class="item-icon">🟣</span>
+                    <span class="item-name">Qwen-Image</span>
+                </a>
+                <a href="https://ideogram.ai" class="item" target="_blank">
+                    <span class="item-icon">🔷</span>
+                    <span class="item-name">Ideogram</span>
+                </a>
+                <a href="https://hlidream.com" class="item" target="_blank">
+                    <span class="item-icon">🔵</span>
+                    <span class="item-name">Hlidream</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- AI视频 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">AI视频</div>
+                <div class="category-subtitle">生成视频</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://sora.com" class="item" target="_blank">
+                    <span class="item-icon">🎬</span>
+                    <span class="item-name">Sora 2</span>
+                </a>
+                <a href="https://veo.google" class="item" target="_blank">
+                    <span class="item-icon">💎</span>
+                    <span class="item-name">Veo 3</span>
+                </a>
+                <a href="https://keling.ai" class="item" target="_blank">
+                    <span class="item-icon">🎪</span>
+                    <span class="item-name">可灵</span>
+                </a>
+                <a href="https://jimeng.jianying.com" class="item" target="_blank">
+                    <span class="item-icon">✨</span>
+                    <span class="item-name">即梦</span>
+                </a>
+                <a href="https://wan.ai" class="item" target="_blank">
+                    <span class="item-icon">🟣</span>
+                    <span class="item-name">Wan 2.5</span>
+                </a>
+                <a href="https://wan.ai" class="item" target="_blank">
+                    <span class="item-icon">🟣</span>
+                    <span class="item-name">Wan 2.2</span>
+                </a>
+                <a href="https://gaga.ai" class="item" target="_blank">
+                    <span class="item-icon">🎭</span>
+                    <span class="item-name">GAGA-1</span>
+                </a>
+                <a href="https://hailuo.ai" class="item" target="_blank">
+                    <span class="item-icon">🌀</span>
+                    <span class="item-name">Hailuo</span>
+                </a>
+                <a href="https://vidu.studio" class="item" target="_blank">
+                    <span class="item-icon">🔷</span>
+                    <span class="item-name">Vidu</span>
+                </a>
+                <a href="https://runwayml.com" class="item" target="_blank">
+                    <span class="item-icon">🏃</span>
+                    <span class="item-name">Runway</span>
+                </a>
+                <a href="https://lumalabs.ai" class="item" target="_blank">
+                    <span class="item-icon">⬛</span>
+                    <span class="item-name">Luma</span>
+                </a>
+                <a href="https://www.midjourney.com" class="item" target="_blank">
+                    <span class="item-icon">⛵</span>
+                    <span class="item-name">Midjourney</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- AI音乐 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">AI音乐</div>
+                <div class="category-subtitle">生成歌曲音乐</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://suno.ai" class="item" target="_blank">
+                    <span class="item-icon">🎵</span>
+                    <span class="item-name">Suno 4.5+</span>
+                </a>
+                <a href="https://labs.11labs.io" class="item" target="_blank">
+                    <span class="item-icon">🎼</span>
+                    <span class="item-name">11 Labs Music</span>
+                </a>
+                <a href="https://mureka.ai" class="item" target="_blank">
+                    <span class="item-icon">🎹</span>
+                    <span class="item-name">Mureka</span>
+                </a>
+                <a href="https://udio.com" class="item" target="_blank">
+                    <span class="item-icon">🎧</span>
+                    <span class="item-name">Udio</span>
+                </a>
+                <a href="https://songgeneration.com" class="item" target="_blank">
+                    <span class="item-icon">🎤</span>
+                    <span class="item-name">SongGeneration</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- TTS文字生成语音 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">TTS</div>
+                <div class="category-subtitle">文字生成语音</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://elevenlabs.io" class="item" target="_blank">
+                    <span class="item-icon">🔊</span>
+                    <span class="item-name">11 Labs</span>
+                </a>
+                <a href="https://indextts2.com" class="item" target="_blank">
+                    <span class="item-icon">📢</span>
+                    <span class="item-name">IndexTTS2</span>
+                </a>
+                <a href="https://fishaudio.com" class="item" target="_blank">
+                    <span class="item-icon">🐟</span>
+                    <span class="item-name">Fish Audio</span>
+                </a>
+                <a href="https://hailuo.ai" class="item" target="_blank">
+                    <span class="item-icon">🌀</span>
+                    <span class="item-name">Hailuo</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- ASR语音识别 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">ASR</div>
+                <div class="category-subtitle">语音识别</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://elevenlabs.io" class="item" target="_blank">
+                    <span class="item-icon">🎙️</span>
+                    <span class="item-name">11 Labs</span>
+                </a>
+                <a href="https://gemini.google.com" class="item" target="_blank">
+                    <span class="item-icon">💎</span>
+                    <span class="item-name">Gemini 2.5 Pro/Flash</span>
+                </a>
+                <a href="https://voxtral.ai" class="item" target="_blank">
+                    <span class="item-icon">📣</span>
+                    <span class="item-name">Voxtral</span>
+                </a>
+                <a href="https://whisper.ai" class="item" target="_blank">
+                    <span class="item-icon">🔇</span>
+                    <span class="item-name">Whisper</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- AI整合产品 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">AI整合产品</div>
+                <div class="category-subtitle">俗称套壳</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://poe.com" class="item" target="_blank">
+                    <span class="item-icon">🎭</span>
+                    <span class="item-name">Poe</span>
+                </a>
+                <a href="https://monica.im" class="item" target="_blank">
+                    <span class="item-icon">💬</span>
+                    <span class="item-name">Monica</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- API聚合服务 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">API聚合服务</div>
+                <div class="category-subtitle">各家API中转</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://openrouter.ai" class="item" target="_blank">
+                    <span class="item-icon">🔄</span>
+                    <span class="item-name">OpenRouter</span>
+                </a>
+                <a href="https://poe.com" class="item" target="_blank">
+                    <span class="item-icon">🎭</span>
+                    <span class="item-name">Poe</span>
+                </a>
+                <a href="https://fal.ai" class="item" target="_blank">
+                    <span class="item-icon">🔶</span>
+                    <span class="item-name">Fal</span>
+                </a>
+                <a href="https://replicate.com" class="item" target="_blank">
+                    <span class="item-icon">🔁</span>
+                    <span class="item-name">Replicate</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- AI IDE -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">AI IDE</div>
+                <div class="category-subtitle">AI编程工具</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://claude.ai/code" class="item" target="_blank">
+                    <span class="item-icon">🌟</span>
+                    <span class="item-name">Claude Code</span>
+                </a>
+                <a href="https://codex.ai" class="item" target="_blank">
+                    <span class="item-icon">💻</span>
+                    <span class="item-name">Codex</span>
+                </a>
+                <a href="https://augment.com" class="item" target="_blank">
+                    <span class="item-icon">➕</span>
+                    <span class="item-name">Augment</span>
+                </a>
+                <a href="https://cursor.sh" class="item" target="_blank">
+                    <span class="item-icon">⬛</span>
+                    <span class="item-name">Cursor</span>
+                </a>
+                <a href="https://gemini.google.com/cli" class="item" target="_blank">
+                    <span class="item-icon">💎</span>
+                    <span class="item-name">Gemini CLI</span>
+                </a>
+                <a href="https://github.com/features/copilot" class="item" target="_blank">
+                    <span class="item-icon">🐙</span>
+                    <span class="item-name">Github Copilot</span>
+                </a>
+                <a href="https://windsurf.com" class="item" target="_blank">
+                    <span class="item-icon">🏄</span>
+                    <span class="item-name">Windsurf</span>
+                </a>
+                <a href="https://trae.ai" class="item" target="_blank">
+                    <span class="item-icon">🟢</span>
+                    <span class="item-name">Trae</span>
+                </a>
+                <a href="https://kiro.ai" class="item" target="_blank">
+                    <span class="item-icon">🟣</span>
+                    <span class="item-name">Kiro</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 虚拟人 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">虚拟人</div>
+                <div class="category-subtitle">语音驱动视频</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://heygen.com" class="item" target="_blank">
+                    <span class="item-icon">👤</span>
+                    <span class="item-name">HeyGen</span>
+                </a>
+                <a href="https://omniavatar.ai" class="item" target="_blank">
+                    <span class="item-icon">🟣</span>
+                    <span class="item-name">OmniAvatar</span>
+                </a>
+                <a href="https://omnihuman.ai" class="item" target="_blank">
+                    <span class="item-icon">📊</span>
+                    <span class="item-name">OmniHuman</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 魔改同步 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">魔改同步</div>
+                <div class="category-subtitle">语音修改视频</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://lipsync.ai" class="item" target="_blank">
+                    <span class="item-icon">👄</span>
+                    <span class="item-name">LipSync</span>
+                </a>
+                <a href="https://keling.ai" class="item" target="_blank">
+                    <span class="item-icon">🎪</span>
+                    <span class="item-name">可灵</span>
+                </a>
+                <a href="https://tavus.io" class="item" target="_blank">
+                    <span class="item-icon">🎬</span>
+                    <span class="item-name">tavus</span>
+                </a>
+                <a href="https://keysync.ai" class="item" target="_blank">
+                    <span class="item-icon">🔑</span>
+                    <span class="item-name">KeySync</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Deep Research深度研究 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">Deep Research</div>
+                <div class="category-subtitle">深度研究</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://gemini.google.com/app" class="item" target="_blank">
+                    <span class="item-icon">💎</span>
+                    <span class="item-name">Gemini APP</span>
+                </a>
+                <a href="https://chatgpt.com" class="item" target="_blank">
+                    <span class="item-icon">💬</span>
+                    <span class="item-name">ChatGPT</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Agent智能体 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">Agent</div>
+                <div class="category-subtitle">智能体</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://chatgpt.com/agents" class="item" target="_blank">
+                    <span class="item-icon">🤖</span>
+                    <span class="item-name">ChatGPT Agent</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Workflow自动化工作流 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">Workflow</div>
+                <div class="category-subtitle">自动化工作流</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://dify.ai" class="item" target="_blank">
+                    <span class="item-icon">🔧</span>
+                    <span class="item-name">Dify</span>
+                </a>
+                <a href="https://agentkit.ai" class="item" target="_blank">
+                    <span class="item-icon">⚫</span>
+                    <span class="item-name">AgentKit</span>
+                </a>
+                <a href="https://n8n.io" class="item" target="_blank">
+                    <span class="item-icon">🔗</span>
+                    <span class="item-name">n8n</span>
+                </a>
+                <a href="https://coze.com" class="item" target="_blank">
+                    <span class="item-icon">⚫</span>
+                    <span class="item-name">Coze</span>
+                </a>
+                <a href="https://opal.ai" class="item" target="_blank">
+                    <span class="item-icon">💎</span>
+                    <span class="item-name">Opal</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- OCR提取文字 -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">OCR</div>
+                <div class="category-subtitle">提取文字</div>
+            </div>
+            <div class="items-grid">
+                <a href="https://claude.ai" class="item" target="_blank">
+                    <span class="item-icon">🌟</span>
+                    <span class="item-name">Claude 4</span>
+                </a>
+                <a href="https://gemini.google.com" class="item" target="_blank">
+                    <span class="item-icon">💎</span>
+                    <span class="item-name">Gemini 2.5 Pro</span>
+                </a>
+                <a href="https://chatgpt.com" class="item" target="_blank">
+                    <span class="item-icon">⚫</span>
+                    <span class="item-name">GPT 5</span>
+                </a>
+                <a href="https://ocgflux.com" class="item" target="_blank">
+                    <span class="item-icon">🔵</span>
+                    <span class="item-name">OCGFlux</span>
+                </a>
+                <a href="https://monkeyocr.com" class="item" target="_blank">
+                    <span class="item-icon">🐒</span>
+                    <span class="item-name">MonkeyOCR</span>
+                </a>
+                <a href="https://mineru.ai" class="item" target="_blank">
+                    <span class="item-icon">📘</span>
+                    <span class="item-name">minerU</span>
+                </a>
+                <a href="https://olmocr.com" class="item" target="_blank">
+                    <span class="item-icon">⬛</span>
+                    <span class="item-name">olmOCR</span>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>💡 本导航收录了截止2025年10月10日最新的优质AI工具</p>
+            <p style="margin-top: 10px; color: #999;">点击任意工具即可访问官网</p>
+        </footer>
+    </div>
+</body>
+</html>
